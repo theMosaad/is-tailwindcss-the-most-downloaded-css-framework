@@ -11,10 +11,15 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 	const { tailwindcssDownloads, bootstrapDownloads } = data
 
 	return {
+		'twitter:card': 'summary_large_image',
+		'twitter:creator': '@theMosaad',
+		'twitter:title': 'Is Tailwind CSS the most downloaded CSS framework?',
+		'twitter:description':
+			'A detailed scientific answer with proof to one of the most important questions in the frontend world.',
 		'twitter:image':
 			tailwindcssDownloads.downloads > bootstrapDownloads.downloads
-				? 'https://istailwindcssthemostdownloadedcssframework.com/yes.png'
-				: 'https://istailwindcssthemostdownloadedcssframework.com/no.png',
+				? 'https://www.istailwindcssthemostdownloadedcssframework.com/yes.png'
+				: 'https://www.istailwindcssthemostdownloadedcssframework.com/no.png',
 		'twitter:image:alt':
 			tailwindcssDownloads.downloads > bootstrapDownloads.downloads ? 'Yes' : 'No',
 	}

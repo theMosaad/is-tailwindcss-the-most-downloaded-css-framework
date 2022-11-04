@@ -6,6 +6,8 @@ import styles from './styles/app.css'
 export const meta: MetaFunction = () => ({
 	charset: 'utf-8',
 	title: 'Is Tailwind CSS the most downloaded CSS framework?',
+	description:
+		'A detailed scientific answer with proof to one of the most important questions in the frontend world.',
 	viewport: 'width=device-width,initial-scale=1',
 })
 

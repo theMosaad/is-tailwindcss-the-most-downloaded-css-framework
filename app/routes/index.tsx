@@ -1,6 +1,24 @@
 import { useLoaderData } from '@remix-run/react'
+import type { MetaFunction } from '@remix-run/server-runtime'
 import { json } from '@remix-run/server-runtime'
 import { getPackageDownloads } from 'query-registry'
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+	if (!data) {
+		return {}
+	}
+
+	const { tailwindcssDownloads, bootstrapDownloads } = data
+
+	return {
+		'twitter:image':
+			tailwindcssDownloads.downloads > bootstrapDownloads.downloads
+				? 'https://istailwindcssthemostdownloadedcssframework.com/yes.png'
+				: 'https://istailwindcssthemostdownloadedcssframework.com/no.png',
+		'twitter:image:alt':
+			tailwindcssDownloads.downloads > bootstrapDownloads.downloads ? 'Yes' : 'No',
+	}
+}
 
 export const loader = async () => {
 	const [tailwindcssDownloads, bootstrapDownloads] = await Promise.all([
@@ -23,7 +41,7 @@ export default function Index() {
 						Is Tailwind CSS the most downloaded CSS framework?
 					</h1>
 					<p
-						className={`mt-6 text-center text-5xl font-black lg:text-9xl ${
+						className={`mt-6 text-center text-5xl font-black uppercase lg:text-9xl ${
 							isTailwindcssDownloadsMoreThanBootstrapDownloads ? 'text-green-600' : 'text-red-600'
 						}`}
 					>

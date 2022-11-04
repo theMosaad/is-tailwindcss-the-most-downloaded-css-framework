@@ -17,6 +17,8 @@ export default function handleRequest(
 
 	responseHeaders.set('Content-Type', 'text/html')
 
+	responseHeaders.set('Cache-Control', 's-maxage=60')
+
 	return new Response('<!DOCTYPE html>' + markup, {
 		headers: responseHeaders,
 		status: responseStatusCode,

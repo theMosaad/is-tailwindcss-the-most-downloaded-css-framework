@@ -121,15 +121,26 @@ export default function Index() {
 			</div>
 			<div className="mt-auto px-4 pt-16 sm:px-6 lg:px-8">
 				<footer className="flex flex-col items-center justify-between gap-10 border-t border-slate-400/20 py-6 sm:flex-row lg:py-10">
-					<p className="text-[0.8125rem] leading-6 text-slate-900">
-						By{' '}
-						<a
-							href="https://twitter.com/theMosaad"
-							className="font-semibold"
-						>
-							@theMosaad
-						</a>
-					</p>
+					<div className="flex gap-6">
+						<p className="text-[0.8125rem] leading-6 text-slate-900">
+							By{' '}
+							<a
+								href="https://twitter.com/theMosaad"
+								className="font-semibold"
+							>
+								@theMosaad
+							</a>
+						</p>
+						<p className="text-[0.8125rem] leading-6 text-slate-900">
+							View{' '}
+							<a
+								href="https://github.com/theMosaad/is-tailwindcss-the-most-downloaded-css-framework"
+								className="font-semibold"
+							>
+								Source code
+							</a>
+						</p>
+					</div>
 					<a
 						className="-my-1 -mx-1.5 flex items-center gap-3 rounded-lg py-1 px-1.5 text-[0.8125rem] font-semibold leading-6 text-slate-900 transition hover:bg-slate-900/[0.03]"
 						href="https://twitter.com/intent/tweet?text=Check%20out%20the%20most%20downloaded%20CSS%20framework%20by%20%40theMosaad&amp;url=https%3A%2F%2Fwww.istailwindcssthemostdownloadedcssframework.com"
